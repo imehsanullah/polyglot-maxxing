@@ -1,0 +1,32 @@
+[project]
+name = "polyglot-maxxing-server"
+version = "0.1.0"
+description = "Local multilingual translation and analysis service for Polyglot Maxxing"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.116,<1",
+  "platformdirs>=4.3,<5",
+  "uvicorn[standard]>=0.35,<1",
+]
+
+[project.optional-dependencies]
+nlp = ["stanza>=1.10,<2"]
+codex = ["openai-codex>=0.147,<1"]
+dev = [
+  "pytest>=8.4,<10",
+]
+
+[project.scripts]
+polyglot-maxxing-server = "polyglot_maxxing.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/polyglot_maxxing"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

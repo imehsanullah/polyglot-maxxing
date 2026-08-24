@@ -1,0 +1,33 @@
+# Local configuration and persistent user data
+.env
+.env.*
+!.env.example
+.data/
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# JavaScript / extension build output
+node_modules/
+apps/extension/.output/
+apps/extension/.wxt/
+*.log
+
+# Python environments and generated files
+.venv/
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+*.py[cod]
+*.egg-info/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.swp

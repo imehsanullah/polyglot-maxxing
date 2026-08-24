@@ -1,0 +1,15 @@
+{
+  "name": "polyglot-maxxing",
+  "version": "0.1.0",
+  "description": "An open-source, local-first browser extension for dual subtitles, contextual explanations, and vocabulary learning.",
+  "private": true,
+  "workspaces": [
+    "apps/extension"
+  ],
+  "scripts": {
+    "dev:extension": "npm run dev --workspace @polyglot-maxxing/extension",
+    "build:extension": "npm run build --workspace @polyglot-maxxing/extension",
+    "test:extension": "npm run test --workspace @polyglot-maxxing/extension",
+    "typecheck:extension": "npm run compile --workspace @polyglot-maxxing/extension"
+  }
+}

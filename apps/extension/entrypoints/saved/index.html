@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saved words · Polyglot Maxxing</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="app-header">
+        <div class="identity">
+          <span class="logo" aria-hidden="true">PM</span>
+          <div>
+            <div class="brand">Polyglot Maxxing</div>
+            <div class="strapline">Max out your language skills from everything you watch.</div>
+          </div>
+        </div>
+        <div id="total" class="total" aria-live="polite"></div>
+      </header>
+
+      <section class="section-title">
+        <div>
+          <h1>Saved Words</h1>
+          <p>Click a word for its contextual tutor. Use the source button to resume the video.</p>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Saved word filters">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="Search words, translations, or context" autocomplete="off" />
+        </label>
+        <label class="select-box">
+          <span>Source</span>
+          <select id="source">
+            <option value="all">Any source</option>
+            <option value="ARD">ARD</option>
+            <option value="ZDF">ZDF</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Netflix">Netflix</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label class="select-box sort-box">
+          <span>Sort</span>
+          <select id="sort">
+            <option value="newest">Newest first</option>
+            <option value="frequency">Most encountered</option>
+            <option value="alphabetical">A–Z</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="stage-row" aria-label="Learning stage filters">
+        <button class="stage-chip all selected" data-stage="all" type="button">All <strong id="count-all">0</strong></button>
+        <button class="stage-chip known" data-stage="known" type="button">✓ Marked as known <strong id="count-known">0</strong></button>
+        <button class="stage-chip learning" data-stage="learning" type="button">▣ Marked to learn <strong id="count-learning">0</strong></button>
+      </section>
+
+      <section id="bulk" class="bulk" hidden>
+        <strong id="selected-count">0 selected</strong>
+        <span class="bulk-label">Set stage:</span>
+        <button type="button" data-bulk-stage="known">Known</button>
+        <button type="button" data-bulk-stage="learning">Learn</button>
+        <button type="button" data-bulk-stage="ignored">Don’t learn</button>
+        <button id="delete" class="delete" type="button">Delete</button>
+      </section>
+
+      <section class="vocabulary" aria-label="Saved words">
+        <div class="table-head row-grid">
+          <label class="check"><input id="select-all" type="checkbox" aria-label="Select all visible words" /></label>
+          <span>Word</span>
+          <span>Translation</span>
+          <span>Context</span>
+          <span>Source</span>
+        </div>
+        <div id="message" class="message">Loading…</div>
+        <div id="words"></div>
+      </section>
+
+      <footer class="pagination">
+        <button id="previous" type="button" aria-label="Previous page">‹</button>
+        <span id="page">1 / 1</span>
+        <button id="next" type="button" aria-label="Next page">›</button>
+      </footer>
+    </main>
+
+    <button id="tutor-backdrop" class="tutor-backdrop" type="button" aria-label="Close word tutor" hidden></button>
+    <aside id="tutor" class="tutor" aria-label="Contextual word tutor" hidden>
+      <header class="tutor-header">
+        <div>
+          <div id="tutor-word" class="tutor-word"></div>
+          <div id="tutor-meaning" class="tutor-meaning"></div>
+        </div>
+        <button id="tutor-close" class="tutor-close" type="button" aria-label="Close word tutor">×</button>
+      </header>
+      <section class="tutor-context">
+        <div id="tutor-german"></div>
+        <div id="tutor-english"></div>
+      </section>
+      <div id="tutor-answers" class="tutor-answers" aria-live="polite">
+        <section class="tutor-section">
+          <h2>Explain</h2>
+          <div id="tutor-explain" class="tutor-section-body"></div>
+        </section>
+        <section class="tutor-section">
+          <h2>Examples</h2>
+          <div id="tutor-examples" class="tutor-section-body"></div>
+        </section>
+        <section class="tutor-section">
+          <h2>Grammar</h2>
+          <div id="tutor-grammar" class="tutor-section-body"></div>
+        </section>
+      </div>
+      <footer class="tutor-footer">
+        <span id="tutor-model"></span>
+        <a id="tutor-source" target="_blank" rel="noreferrer">▶ Resume video</a>
+      </footer>
+    </aside>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

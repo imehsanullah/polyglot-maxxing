@@ -1,0 +1,22 @@
+services:
+  polyglot-maxxing-server:
+    image: polyglot-maxxing-server:latest
+    build:
+      context: ./apps/polyglot-maxxing-server
+    environment:
+      POLYGLOT_MAXXING_DATABASE: /data/polyglot-maxxing.db
+      POLYGLOT_MAXXING_CODEX_HOME: /data/codex
+      POLYGLOT_MAXXING_CODEX_CONCURRENCY: ${POLYGLOT_MAXXING_CODEX_CONCURRENCY:-2}
+      POLYGLOT_MAXXING_CODEX_TIMEOUT_SECONDS: ${POLYGLOT_MAXXING_CODEX_TIMEOUT_SECONDS:-90}
+      POLYGLOT_MAXXING_CODEX_TRANSLATION_EFFORT: ${POLYGLOT_MAXXING_CODEX_TRANSLATION_EFFORT:-low}
+      POLYGLOT_MAXXING_CODEX_TRANSLATION_MODEL: ${POLYGLOT_MAXXING_CODEX_TRANSLATION_MODEL:-gpt-5.6-luna}
+      POLYGLOT_MAXXING_CODEX_TRANSLATION_TIMEOUT_SECONDS: ${POLYGLOT_MAXXING_CODEX_TRANSLATION_TIMEOUT_SECONDS:-90}
+      POLYGLOT_MAXXING_ENABLE_STANZA: "1"
+      POLYGLOT_MAXXING_HOST: 0.0.0.0
+    ports:
+      - "127.0.0.1:8765:8765"
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ${POLYGLOT_MAXXING_DATA_DIR:-./data}
+        target: /data

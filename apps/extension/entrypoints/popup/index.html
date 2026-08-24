@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polyglot Maxxing</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="brand">Polyglot Maxxing</div>
+      <div id="status" class="status">Checking local companion…</div>
+      <section class="setting languages" aria-labelledby="languages-title">
+        <strong id="languages-title">Languages</strong>
+        <label class="language-field" for="learning-language">
+          <span>Learning</span>
+          <select id="learning-language"></select>
+        </label>
+        <label class="language-field" for="translation-language">
+          <span>Translate into</span>
+          <select id="translation-language"></select>
+        </label>
+      </section>
+      <section class="setting compact size-setting" aria-labelledby="subtitle-size-label">
+        <label id="subtitle-size-label" for="subtitle-size">
+          <span>Subtitle size</span>
+          <span class="number-unit">
+            <input id="subtitle-size" type="number" inputmode="numeric" min="18" max="52" step="1" value="28" />
+            <span>px</span>
+          </span>
+        </label>
+      </section>
+      <section class="setting compact">
+        <label for="pause-on-click">
+          <span>Pause when opening a word</span>
+          <input id="pause-on-click" type="checkbox" checked />
+        </label>
+      </section>
+      <section class="setting codex-setting" aria-labelledby="codex-title">
+        <div class="setting-heading">
+          <strong id="codex-title">ChatGPT model</strong>
+          <button id="codex-model-refresh" class="refresh-button" type="button" title="Refresh models from Codex" aria-label="Refresh models from Codex">↻</button>
+        </div>
+        <div class="model-fields">
+          <label class="stacked" for="codex-model">
+            <span>Model</span>
+            <select id="codex-model"></select>
+          </label>
+          <label class="stacked" for="codex-effort">
+            <span>Reasoning</span>
+            <select id="codex-effort"></select>
+          </label>
+        </div>
+        <label class="tutor-toggle" for="codex-enabled">
+          <span>Word tutor</span>
+          <input id="codex-enabled" type="checkbox" />
+        </label>
+        <div id="codex-account" class="account-card" hidden>
+          <div class="account-summary">
+            <strong id="codex-account-email">ChatGPT account</strong>
+            <span id="codex-account-meta">Connected</span>
+          </div>
+          <div class="account-actions">
+            <button id="codex-switch" class="account-button" type="button">Switch account</button>
+            <button id="codex-disconnect" class="account-button danger" type="button">Disconnect</button>
+          </div>
+        </div>
+        <div id="codex-status" class="codex-status">Checking ChatGPT connection…</div>
+        <div id="codex-device" class="device-code" hidden>
+          <span>Device code</span>
+          <output id="codex-code">—</output>
+          <button id="codex-copy" class="copy-code" type="button">Copy code</button>
+        </div>
+        <button id="codex-connect" class="secondary" type="button">Connect ChatGPT account</button>
+      </section>
+      <button id="saved" type="button">Open saved words</button>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
