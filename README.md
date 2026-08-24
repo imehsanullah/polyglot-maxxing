@@ -22,7 +22,7 @@ computer.
 - German and translated subtitles displayed together inside the video player,
   including fullscreen mode.
 - Timed subtitle-track extraction and seek-aware prefetching in 24-cue batches.
-- Clickable words with streamed Explain, Examples, and Grammar sections.
+- Clickable words with Explain, Examples, and Grammar sections.
 - Right-click learning/known status and a searchable Saved Words page with
   timestamped links back to the video.
 - Selectable source language, target language, Codex model, reasoning effort,
@@ -48,9 +48,6 @@ FastAPI companion: Codex requests, analysis, cache, and vocabulary
         ↓
 Attached ChatGPT account through the Codex SDK
 ```
-
-The companion binds only to loopback. There is no OpenAI API-key setup and no
-local translation-model fallback.
 
 ## Requirements
 
@@ -143,7 +140,8 @@ Polyglot Maxxing does not bypass authentication, subscriptions, region limits,
 DRM, or unavailable videos. Streaming sites can change their internal player
 interfaces, so adapters may occasionally need maintenance.
 
-## Development
+<details>
+<summary><strong>Development</strong></summary>
 
 Extension:
 
@@ -171,7 +169,10 @@ uv run python -c "import stanza; stanza.download('de', processors='tokenize,pos,
 The Docker image already includes the German Stanza resources. Other languages
 use safe Unicode tokenization unless a matching local analyzer is installed.
 
-## Optional offline dictionary
+</details>
+
+<details>
+<summary><strong>Optional offline dictionary</strong></summary>
 
 From `apps/polyglot-maxxing-server`, install the verified FreeDict/Ding
 German-English dictionary:
@@ -189,7 +190,10 @@ uv run python scripts/build_dictionary.py /path/to/kaikki-data.jsonl.gz
 Dictionary datasets are downloaded separately and are not part of this
 repository. Their licenses apply independently.
 
-## Configuration
+</details>
+
+<details>
+<summary><strong>Configuration</strong></summary>
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
@@ -202,6 +206,8 @@ repository. Their licenses apply independently.
 | `POLYGLOT_MAXXING_CODEX_TIMEOUT_SECONDS` | `90` | Word-tutor timeout |
 | `POLYGLOT_MAXXING_CODEX_CONCURRENCY` | `2` | Maximum concurrent Codex turns |
 | `POLYGLOT_MAXXING_ENABLE_STANZA` | `1` | Enable installed Stanza models |
+
+</details>
 
 ## Privacy
 
