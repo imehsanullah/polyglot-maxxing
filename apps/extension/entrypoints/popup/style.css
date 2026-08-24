@@ -6,6 +6,8 @@
 
 body { width: 310px; margin: 0; }
 main { padding: 14px; }
+.identity { display: flex; align-items: center; gap: 8px; }
+.logo { width: 28px; height: 28px; border-radius: 7px; }
 .brand { color: #ffcf4a; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .status { margin: 9px 0 11px; padding: 8px 10px; border-radius: 8px; background: #171f31; color: #c7d0ee; font-size: 12px; }
 .status.ok { color: #a7f3c1; }

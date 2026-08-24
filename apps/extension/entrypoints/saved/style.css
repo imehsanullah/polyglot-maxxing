@@ -19,16 +19,9 @@ main { width: 100%; min-height: 100vh; padding: 0 22px 48px; }
 }
 .identity { display: flex; align-items: center; gap: 11px; }
 .logo {
-  display: grid;
   width: 36px;
   height: 36px;
-  place-items: center;
-  border: 1px solid #8b643d;
   border-radius: 9px;
-  background: #312a25;
-  color: #ffb86b;
-  font-size: 12px;
-  font-weight: 850;
 }
 .brand { font-weight: 760; }
 .strapline, .total { color: #8e949f; font-size: 12px; }

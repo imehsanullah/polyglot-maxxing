@@ -1,6 +1,10 @@
-# Polyglot Maxxing
+<p align="center">
+  <img src="docs/images/logo.png" alt="Polyglot Maxxing logo" width="96" />
+</p>
 
-> Max out your language skills from everything you watch.
+<h1 align="center">Polyglot Maxxing</h1>
+
+<p align="center"><strong>Max out your language skills from everything you watch.</strong></p>
 
 Polyglot Maxxing is an open-source, local-first Chromium extension for dual
 subtitles, contextual word explanations, and vocabulary learning. It currently
@@ -10,6 +14,8 @@ German → English is the default, but the learning and translation languages ar
 selectable. Subtitle translation and word tutoring use a Codex model through an
 attached ChatGPT account; saved words, translations, and caches remain on your
 computer.
+
+![Polyglot Maxxing dual subtitles inside a video player](docs/images/hero.png)
 
 ## Features
 
@@ -22,6 +28,14 @@ computer.
 - Selectable source language, target language, Codex model, reasoning effort,
   and subtitle size.
 - SQLite persistence and optional local German analysis/dictionary data.
+
+## Product tour
+
+| Contextual word tutor | Extension settings |
+| --- | --- |
+| ![Explain, Examples, and Grammar shown together](docs/images/word-tutor.png) | ![Language, subtitle, model, and account settings](docs/images/popup.png) |
+
+![Searchable saved vocabulary with learning states and source timestamps](docs/images/saved-words.png)
 
 ## How it works
 
@@ -69,7 +83,11 @@ Persistent application data is stored in `./data` by default. Set
 `POLYGLOT_MAXXING_DATA_DIR` in `.env` to use another directory. Never commit or
 share that directory; it contains the SQLite database and Codex login state.
 
-### 2. Build and load the extension
+### 2. Install the extension
+
+Download and unzip the Chrome bundle from
+[GitHub Releases](https://github.com/imehsanullah/polyglot-maxxing/releases), or
+build it from source:
 
 ```bash
 npm install
