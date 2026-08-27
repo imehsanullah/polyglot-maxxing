@@ -136,10 +136,6 @@ source track silently.
 - **Netflix:** the signed timed-text document from the active playback session,
   with rendered captions as a temporary fallback.
 
-Polyglot Maxxing does not bypass authentication, subscriptions, region limits,
-DRM, or unavailable videos. Streaming sites can change their internal player
-interfaces, so adapters may occasionally need maintenance.
-
 <details>
 <summary><strong>Development</strong></summary>
 
@@ -208,13 +204,6 @@ repository. Their licenses apply independently.
 | `POLYGLOT_MAXXING_ENABLE_STANZA` | `1` | Enable installed Stanza models |
 
 </details>
-
-## Privacy
-
-Vocabulary, dictionary data, authentication state, and caches are stored
-locally. Subtitle cues and their immediate context are sent to the selected
-Codex model for translation. Opening a word also sends that word, its subtitle
-context and translation, and available token metadata for tutoring.
 
 ## License
 
